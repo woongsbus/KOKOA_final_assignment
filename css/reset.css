@@ -1,0 +1,126 @@
+/* ==========================================================
+   reset.css — 모던 브라우저용 CSS 리셋
+   ========================================================== */
+
+/* 1. 박스 크기 계산 방식 통일 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. 기본 margin / padding 제거 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. 모바일에서 글자 크기 자동 확대 방지 */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* 4. 접근성: 사용자가 모션 줄이기를 원하지 않을 때만 부드러운 스크롤 */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* 5. body 기본값 */
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* 6. 제목은 줄 간격을 조금 좁게, 줄바꿈 균형 */
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+/* 7. 본문 텍스트 줄바꿈 개선 + 긴 단어 넘침 방지 */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+p {
+  text-wrap: pretty;
+}
+
+/* 8. 목록 스타일 제거 */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 9. 링크 기본 스타일 제거 */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 10. 미디어 요소를 블록으로, 부모 너비를 넘지 않도록 */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 11. 폼 요소가 부모 폰트를 상속하도록 */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* 12. 버튼 기본 모양 제거 */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* 13. textarea는 세로 크기 조절만 허용 */
+textarea {
+  resize: vertical;
+}
+
+/* 14. 테이블 테두리 겹침 처리 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 15. hidden 속성이 항상 우선하도록 */
+[hidden] {
+  display: none !important;
+}
+
+/* 16. 접근성: 모션 줄이기 설정 존중 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+input:focus {
+    outline: none;
+}
